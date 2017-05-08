@@ -1,0 +1,10 @@
+{
+    "alias": "base",
+    "name": "Base",
+    "author": "xcms",
+    "description": "This is the description for the Base module.",
+    "namespace": "Xcms\\Base",
+    "version": "1.0",
+    "autoload": "psr-4",
+    "enabled": true
+}

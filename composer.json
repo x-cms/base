@@ -1,0 +1,19 @@
+{
+    "name": "xcms/base",
+    "description": "Xcms core system",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jinhongjie",
+            "email": "jinhongjie007@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Xcms\\Base\\": "src"
+        }
+    }
+}
