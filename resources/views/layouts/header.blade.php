@@ -12,15 +12,15 @@
                 <li><a href="/" target="_blank"><i class="fa fa-eye"></i> 查看站点</a></li>
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                        <span class="hidden-xs">Alexander Pierce</span>
+                        <img src="{{ isset(Auth::guard('admin')->user()->avatar) ? get_image(Auth::guard('admin')->user()->avatar) : get_image('vendor/core/images/no-avatar-other.jpg') }}" class="user-image" alt="User Image">
+                        <span class="hidden-xs">{{ Auth::guard('admin')->user()->username }}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <li class="user-header">
-                            <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                            <img src="{{ isset(Auth::guard('admin')->user()->avatar) ? get_image(Auth::guard('admin')->user()->avatar) : get_image('vendor/core/images/no-avatar-other.jpg') }}" class="img-circle" alt="User Image">
                             <p>
-                                Alexander Pierce - Web Developer
-                                <small>Member since Nov. 2012</small>
+                                {{ Auth::guard('admin')->user()->username }} - Web Developer
+                                <small>Member since {{ Auth::guard('admin')->user()->created_at }}</small>
                             </p>
                         </li>
                         <li class="user-footer">
@@ -28,7 +28,7 @@
                                 <a href="#" class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
-                                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                <a href="{{ route('admin.logout') }}" class="btn btn-default btn-flat">Sign out</a>
                             </div>
                         </li>
                     </ul>

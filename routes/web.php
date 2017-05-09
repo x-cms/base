@@ -13,6 +13,6 @@
 
 use Illuminate\Routing\Router;
 
-Route::group(['prefix'=>'admin'],function (Router $router){
+Route::group(['prefix' => 'admin'], function (Router $router) {
     $router->get('/', 'DashboardController@index')->name('dashboard.index');
 });
