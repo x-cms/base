@@ -56,6 +56,7 @@ class ModuleServiceProvider extends ServiceProvider
          * Other module providers
          */
         $this->app->register(\Xcms\Acl\Providers\ModuleServiceProvider::class);
+        $this->app->register(\Xcms\Menu\Providers\ModuleServiceProvider::class);
 
         //Load module
         $this->app->singleton('breadcrumbs', function () {

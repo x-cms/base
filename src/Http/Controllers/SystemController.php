@@ -14,15 +14,20 @@ class SystemController extends Controller
 
     public function __construct()
     {
+        $this->middleware('auth.admin');
+
         $this->middleware(function (Request $request, $next) {
             $this->breadcrumbs = Breadcrumbs::setBreadcrumbClass('breadcrumb')
                 ->setContainerTag('ol')
                 ->addLink('后台首页', route('dashboard.index'), '<i class="fa fa-home mr5"></i>');
 
+            $this->loggedInUser = $request->user('admin');
+            view()->share([
+                'loggedInUser' => $this->loggedInUser
+            ]);
+
             return $next($request);
         });
-
-        $this->middleware('auth.admin');
     }
 
     /**
@@ -37,4 +42,5 @@ class SystemController extends Controller
             'subPageTitle' => $subTitle,
         ]);
     }
+
 }
