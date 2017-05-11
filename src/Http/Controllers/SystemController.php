@@ -4,7 +4,7 @@ namespace Xcms\Base\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Xcms\Base\Facades\Breadcrumbs;
+use Xcms\Base\Facades\BreadcrumbsFacade;
 
 class SystemController extends Controller
 {
@@ -17,7 +17,7 @@ class SystemController extends Controller
         $this->middleware('auth.admin');
 
         $this->middleware(function (Request $request, $next) {
-            $this->breadcrumbs = Breadcrumbs::setBreadcrumbClass('breadcrumb')
+            $this->breadcrumbs = BreadcrumbsFacade::setBreadcrumbClass('breadcrumb')
                 ->setContainerTag('ol')
                 ->addLink('后台首页', route('dashboard.index'), '<i class="fa fa-home mr5"></i>');
 

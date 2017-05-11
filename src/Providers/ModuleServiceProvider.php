@@ -2,7 +2,8 @@
 
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
-use Xcms\Base\Facades\Breadcrumbs as BreadcrumbsFacade;
+use Xcms\Base\Providers\CollectiveServiceProvider;
+use Xcms\Base\Facades\BreadcrumbsFacade as BreadcrumbsFacade;
 use Xcms\Base\Support\Breadcrumbs;
 
 class ModuleServiceProvider extends ServiceProvider
@@ -49,8 +50,18 @@ class ModuleServiceProvider extends ServiceProvider
         //Load helpers
         $this->loadHelpers();
 
+        /**
+         * Base providers
+         */
+        $this->app->register(CollectiveServiceProvider::class);
         $this->app->register(RouteServiceProvider::class);
         $this->app->register(ComposerServiceProvider::class);
+
+        /**
+         * Other packages
+         */
+        $this->app->register(\Yajra\Datatables\DatatablesServiceProvider::class);
+        $this->app->register(\Collective\Html\HtmlServiceProvider::class);
 
         /**
          * Other module providers
@@ -58,14 +69,11 @@ class ModuleServiceProvider extends ServiceProvider
         $this->app->register(\Xcms\Acl\Providers\ModuleServiceProvider::class);
         $this->app->register(\Xcms\Menu\Providers\ModuleServiceProvider::class);
 
-        //Load module
-        $this->app->singleton('breadcrumbs', function () {
-            return new Breadcrumbs();
-        });
-
         //Register related facades
         $loader = AliasLoader::getInstance();
         $loader->alias('Breadcrumbs', BreadcrumbsFacade::class);
+        $loader->alias('Form', \Collective\Html\FormFacade::class);
+        $loader->alias('Html', \Collective\Html\HtmlFacade::class);
     }
 
     protected function loadHelpers()

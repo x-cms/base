@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css">
-    @stack('style')
+    @stack('styles')
     <link rel="stylesheet" href="{{ asset('vendor/core/css/AdminLTE.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/core/css/skins/_all-skins.min.css') }}">
     @stack('css')
@@ -57,7 +57,7 @@
     <script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="//cdn.bootcss.com/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
     <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
-    @stack('script')
+    @stack('scripts')
     <script src="{{ asset('vendor/core/js/app.min.js') }}"></script>
     <script src="{{ asset('vendor/core/js/demo.js') }}"></script>
     @stack('js')

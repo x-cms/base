@@ -1,7 +1,7 @@
 <?php namespace Xcms\Base\Http\ViewComposers;
 
 use Illuminate\View\View;
-use Xcms\Base\Facades\Breadcrumbs;
+use Xcms\Base\Facades\BreadcrumbsFacade;
 
 class AdminBreadcrumbsViewComposer
 {
@@ -10,6 +10,6 @@ class AdminBreadcrumbsViewComposer
      */
     public function compose(View $view)
     {
-        $view->with('pageBreadcrumbs', Breadcrumbs::render());
+        $view->with('pageBreadcrumbs', BreadcrumbsFacade::render());
     }
 }

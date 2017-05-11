@@ -3,14 +3,15 @@
 namespace Xcms\Base\Facades;
 
 use Illuminate\Support\Facades\Facade;
+use Xcms\Base\Support\Breadcrumbs;
 
-class Breadcrumbs extends Facade
+class BreadcrumbsFacade extends Facade
 {
     /**
      * @return string
      */
     protected static function getFacadeAccessor()
     {
-        return 'breadcrumbs';
+        return Breadcrumbs::class;
     }
 }
