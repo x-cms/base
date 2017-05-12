@@ -57,9 +57,11 @@
     <script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="//cdn.bootcss.com/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
     <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
-    @stack('scripts')
-    <script src="{{ asset('vendor/core/js/app.min.js') }}"></script>
     <script src="{{ asset('vendor/core/js/demo.js') }}"></script>
+    <script src="{{ asset('vendor/core/js/app.min.js') }}"></script>
+    <script src="{{ asset('vendor/core/js/core.js') }}"></script>
+    <script src="{{ asset('vendor/core/js/script.js') }}"></script>
+    @stack('scripts')
     @stack('js')
 </body>
 </html>

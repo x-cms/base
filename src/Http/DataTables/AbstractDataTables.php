@@ -112,23 +112,26 @@ abstract class AbstractDataTables
     {
         $filters = $this->filters;
         $headings = $this->headings();
-        $columns = json_encode($this->columns());
         $groupActions = $this->groupActions;
-        $selector = $this->selector;
-        $ajaxUrl = $this->ajaxUrl;
-
-//        assets_management()->addJavascripts('jquery-datatables');
 
 //        add_action(BASE_ACTION_FOOTER_JS, function () use ($selector, $columns, $ajaxUrl) {
-        $datatableScript = view('base::components.datatables.script-renderer', compact(
-                'columns', 'selector', 'ajaxUrl'
-            ))->render();
+//        $datatableScript =
 //        });
-        view()->share(compact('datatableScript'));
 
         return view($this->dataTableView, compact(
             'filters', 'headings', 'groupActions'
         ))->render();
+    }
+
+    public function script()
+    {
+        $columns = json_encode($this->columns());
+        $selector = $this->selector;
+        $ajaxUrl = $this->ajaxUrl;
+
+        return view('base::components.datatables.script-renderer', compact(
+                'columns', 'selector', 'ajaxUrl'
+            ))->render();
     }
 
     /**
