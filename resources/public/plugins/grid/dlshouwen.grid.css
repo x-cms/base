@@ -1,0 +1,235 @@
+.grid-container {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial,
+    Verdana, sans-serif;
+    position: relative;
+    overflow: auto;
+}
+
+.grid-container > .table {
+    margin: 5px 0;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    padding: 8px;
+    line-height: 1;
+    vertical-align: middle;
+    cursor: default;
+}
+
+.grid-toolbar-container {
+    text-align: right;
+}
+
+.grid-toolbar-container .grid-tools {
+    float: left;
+    margin: 0;
+    margin: 5px 0;
+}
+
+.grid-toolbar-container .grid-pager {
+    float: right;
+}
+
+.grid-toolbar-container .grid-pager .grid-pager-status {
+    float: right;
+    margin: 0;
+    margin: 6px 20px 0 0;
+    height: 28px;
+    line-height: 28px;
+}
+
+.grid-toolbar-container .grid-pager .grid-pager-button {
+    float: right;
+    margin: 0;
+    margin-top: 5px;
+}
+
+.grid th {
+    text-align: center;
+    position: relative;
+}
+
+.grid-extra-columns {
+    background: #fafafa;
+}
+
+.grid-extra-columns p {
+    padding: 4px;
+    margin-bottom: 0px;
+    line-height: 100%;
+    text-indent: 0px;
+}
+
+.extra-column {
+    text-align: center;
+    cursor: pointer;
+}
+
+.grid-status {
+    float: right;
+    padding-top: 6px;
+    margin-right: 12px;
+}
+
+.change-page-size {
+    width: 68px;
+    display: inline;
+    padding: 2px 4px;
+    line-height: 0px;
+    height: auto;
+}
+
+.grid-process-bar-top {
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    top: 0px;
+    left: 0px;
+}
+
+.grid-process-bar-bottom {
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.advance-search-iframe {
+    border: 0px;
+    width: 100%;
+    height: 400px;
+}
+
+.grid-sort {
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    color: #999;
+}
+
+.grid-sort-desc {
+    top: 0px;
+}
+
+.table-print th, .table-print td {
+    text-align: center;
+}
+
+.table-print {
+    margin-bottom: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+}
+
+.form-export .form-group {
+    margin-bottom: 0px;
+}
+
+.form-export .control-label, .form-export .checkbox {
+    padding-top: 0px;
+}
+
+.table-export th, .table-export td {
+    text-align: center;
+}
+
+.table-export {
+    margin-bottom: 0px;
+    border-bottom: 0px;
+}
+
+.advance-query .tab-pane .panel {
+    border-top: 0px;
+    margin-bottom: 0px;
+}
+
+.advance-query .advance-query-buttons {
+    border-bottom: 0px;
+    padding: 10px;
+}
+
+.advance-query .advance-query-table-container {
+    overflow-x: auto;
+    margin: 10px;
+    margin-top: 0;
+}
+
+.advance-query .table {
+    margin-bottom: 0px;
+}
+
+.advance-query .table-center th {
+    text-align: center;
+}
+
+.advance-query .table-center td {
+    text-align: center;
+}
+
+.toast {
+    position: fixed;
+    bottom: 10px;
+    background: black;
+    padding: 10px 20px;
+    line-height: 18px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 1);
+    -o-box-shadow: 0 0 6px rgba(0, 0, 0, 1);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 1);
+}
+
+.search-dtGrid-form {
+    position: relative;
+    float: right;
+    margin-top: 5px;
+}
+
+.search-dtGrid-form .form-control {
+    font-size: 12px;
+    width: 250px;
+    padding: 5px 15px;
+    height: 30px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px
+}
+
+.search-dtGrid-form .form-control:focus {
+    width: 340px;
+    animation: expand .2s;
+    -webkit-animation: expand .2s
+}
+
+@keyframes expand {
+    from {
+        width: 250px
+    }
+    to {
+        width: 340px
+    }
+}
+
+@-webkit-keyframes expand {
+    from {
+        width: 250px
+    }
+    to {
+        width: 340px
+    }
+}
+
+.search-dtGrid-form .btn-search {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: none;
+    background: 0 0;
+    -webkit-border-radius: 0 30px 30px 0;
+    -moz-border-radius: 0 30px 30px 0;
+    border-radius: 0 30px 30px 0
+}
