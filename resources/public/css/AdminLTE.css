@@ -5926,6 +5926,14 @@ table.text-center th {
     padding-top: 20px;
 }
 
+.role{
+    border-bottom: 1px dashed #DDD;
+}
+
+.role:last-child{
+    border: none;
+}
+
 /*
  *  间距样式
  */
