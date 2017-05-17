@@ -19,6 +19,11 @@
 			open : '<i class="fa fa-plus"></i>',
 			close : '<i class="fa fa-minus"></i>'
 		},
+        treeColumn : {
+            open : '<i class="fa fa-plus-square-o"></i>',
+            close : '<i class="fa fa-minus-square-o"></i>',
+			noChild: '<i class="fa fa-square-o"></i>'
+        },
 		sortColumn : {
 			asc : '<i class="fa fa-sort-asc"></i>',
 			desc : '<i class="fa fa-sort-desc"></i>'
