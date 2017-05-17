@@ -233,3 +233,7 @@
     -moz-border-radius: 0 30px 30px 0;
     border-radius: 0 30px 30px 0
 }
+
+.level-1 {
+    margin-left: 15px;
+}

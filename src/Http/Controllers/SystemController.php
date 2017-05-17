@@ -14,8 +14,6 @@ class SystemController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth.admin');
-
         $this->middleware(function (Request $request, $next) {
             $this->breadcrumbs = BreadcrumbsFacade::setBreadcrumbClass('breadcrumb')
                 ->setContainerTag('ol')
