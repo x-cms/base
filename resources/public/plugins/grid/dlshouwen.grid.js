@@ -237,6 +237,9 @@
                             type:'post',
                             url:url,
                             data:params,
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            },
                             contentType: "application/x-www-form-urlencoded; charset=utf-8",
                             beforeSend: function(xhr) {xhr.setRequestHeader("__REQUEST_TYPE", "AJAX_REQUEST");},
                             success:function(pager){
