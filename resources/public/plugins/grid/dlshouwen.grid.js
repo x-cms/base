@@ -2691,18 +2691,17 @@
                 if (level === 'success') levelClass = 'text-success';
                 // close other toast div
                 clearTimeout($.fn.dtGrid.tools.toastThread);
-                let toast = $('.toast');
-                toast.remove();
+                $('.toast').remove();
                 // constructs the html content
                 let toastContent = '<div class="toast ' + levelClass + '" style="z-index:' + $.fn.dtGrid.tools.toastZIndex + '">' + content + '</div>';
                 // append to the ducoment
                 $('body').append(toastContent);
                 // set the offset
-                let x = $(window).width() / 2 - toast.width() / 2 - 20;
+                let x = $(window).width() / 2 - $('.toast').width() / 2 - 20;
                 //toast(x);
-                toast.css("left", x);
+                $('.toast').css("left", x);
                 // show the div
-                toast.fadeIn($.fn.dtGrid.tools.toastFadeInAnimateTime, function () {
+                $('.toast').fadeIn($.fn.dtGrid.tools.toastFadeInAnimateTime, function () {
                     // callback close
                     if (time) {
                         $.fn.dtGrid.tools.toastThread = setTimeout($.fn.dtGrid.tools.removeToast, time);

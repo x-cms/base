@@ -169,7 +169,7 @@
 
 .toast {
     position: fixed;
-    bottom: 10px;
+    bottom: 60px;
     background: black;
     padding: 10px 20px;
     line-height: 18px;

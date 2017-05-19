@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     @stack('styles')
     <link rel="stylesheet" href="{{ asset('vendor/core/css/AdminLTE.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/core/css/skins/_all-skins.min.css') }}">
@@ -16,50 +17,62 @@
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-    <div class="wrapper">
-        {{--BEGIN Header--}}
-        @include('base::layouts.header')
-        {{--END Header--}}
+<div class="wrapper">
+    {{--BEGIN Header--}}
+    @include('base::layouts.header')
+    {{--END Header--}}
 
-        {{--BEGIN Sidebar--}}
-        @include('base::layouts.sidebar')
-        {{--END Sidebar--}}
+    {{--BEGIN Sidebar--}}
+    @include('base::layouts.sidebar')
+    {{--END Sidebar--}}
 
-        <div class="content-wrapper">
-            <section class="content-header">
-                {{--BEGIN Page title--}}
-                @include('base::partials.page-title')
-                {{--END Page title--}}
-                {{--BEGIN Breadcrumbs--}}
-                @include('base::partials.breadcrumbs')
-                {{--END Breadcrumbs--}}
-            </section>
+    <div class="content-wrapper">
+        <section class="content-header">
+            {{--BEGIN Page title--}}
+            @include('base::partials.page-title')
+            {{--END Page title--}}
+            {{--BEGIN Breadcrumbs--}}
+            @include('base::partials.breadcrumbs')
+            {{--END Breadcrumbs--}}
+        </section>
 
-            <section class="content">
-                {{--BEGIN Content--}}
-                @yield('content')
-                {{--END Content--}}
-            </section>
-        </div>
-
-        {{--BEGIN Footer--}}
-        @include('base::layouts.footer')
-        {{--END Footer--}}
-
+        <section class="content">
+            {{--BEGIN Content--}}
+            @yield('content')
+            {{--END Content--}}
+        </section>
     </div>
 
-    <!--[if lt IE 9]>
-    <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
-    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    {{--BEGIN Footer--}}
+    @include('base::layouts.footer')
+    {{--END Footer--}}
 
-    <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-    <script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="//cdn.bootcss.com/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
-    <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
-    <script src="{{ asset('vendor/core/js/demo.js') }}"></script>
-    <script src="{{ asset('vendor/core/js/app.min.js') }}"></script>
-    @stack('scripts')
-    @stack('js')
+</div>
+
+<!--[if lt IE 9]>
+<script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
+<script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+<script src="//cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+<script src="{{ asset('vendor/core/js/demo.js') }}"></script>
+<script src="{{ asset('vendor/core/js/app.min.js') }}"></script>
+<script src="{{ asset('vendor/core/js/core.js') }}"></script>
+@if (session()->has('success_msg') || session()->has('error_msg'))
+<script type="text/javascript">
+    @if (session()->has('success_msg'))
+    Xcms.showNotice('success', '{{ session('success_msg') }}', '成功');
+    @endif
+    @if (session()->has('error_msg'))
+    Xcms.showNotice('error', '{{ session('error_msg') }}', '失败');
+    @endif
+</script>
+@endif
+@stack('scripts')
+@stack('js')
 </body>
 </html>
