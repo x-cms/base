@@ -299,15 +299,11 @@
                                 gridContent += '	<th columnNo="' + i + '" columnId="' + columns[i].id + '" class="grid-header ' + grid.getColumnClassForHide(columns[i]) + ' ' + columns[i].headerClass + ' can-sort" style="' + columns[i].headerStyle + '">';
                             }
                             if (grid.sortParameter && grid.sortParameter.columnId && grid.sortParameter.columnId === columns[i].id) {
-                                if (grid.sortParameter.sortType === '1') {
+                                if (grid.sortParameter.sortType === 1) {
                                     gridContent += '<span class="grid-sort">' + $.fn.dtGrid.lang[grid.option.lang].sortColumn.asc + '</span>';
-                                } else if (grid.exhibitData[i]['child'].length === 0 && j === 0) {
-                                    gridContent += '<a href="javascript:;">' + $.fn.dtGrid.lang[grid.option.lang].treeColumn.noChild + '</a> '
                                 }
-                                if (grid.sortParameter.sortType === '2') {
+                                if (grid.sortParameter.sortType === 2) {
                                     gridContent += '<span class="grid-sort grid-sort-desc">' + $.fn.dtGrid.lang[grid.option.lang].sortColumn.desc + '</span>';
-                                } else if (grid.exhibitData[i]['child'].length === 0 && j === 0) {
-                                    gridContent += '<a href="javascript:;">' + $.fn.dtGrid.lang[grid.option.lang].treeColumn.noChild + '</a> '
                                 }
                             }
                             gridContent += '		' + columns[i].title;
