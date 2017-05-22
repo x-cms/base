@@ -2,6 +2,7 @@
 
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
+use Nestable\NestableServiceProvider;
 use Xcms\Base\Providers\CollectiveServiceProvider;
 use Xcms\Base\Facades\BreadcrumbsFacade as BreadcrumbsFacade;
 use Xcms\Base\Support\Breadcrumbs;
@@ -62,6 +63,7 @@ class ModuleServiceProvider extends ServiceProvider
          */
         $this->app->register(\Yajra\Datatables\DatatablesServiceProvider::class);
         $this->app->register(\Collective\Html\HtmlServiceProvider::class);
+        $this->app->register(NestableServiceProvider::class);
 
         /**
          * Other module providers
@@ -74,6 +76,7 @@ class ModuleServiceProvider extends ServiceProvider
         $loader->alias('Breadcrumbs', BreadcrumbsFacade::class);
         $loader->alias('Form', \Collective\Html\FormFacade::class);
         $loader->alias('Html', \Collective\Html\HtmlFacade::class);
+        $loader->alias('Nestable', \Nestable\Facades\NestableService::class);
     }
 
     protected function loadHelpers()
