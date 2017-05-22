@@ -70,6 +70,8 @@ class ModuleServiceProvider extends ServiceProvider
          */
         $this->app->register(\Xcms\Acl\Providers\ModuleServiceProvider::class);
         $this->app->register(\Xcms\Menu\Providers\ModuleServiceProvider::class);
+        $this->app->register(\Xcms\Blog\Providers\ModuleServiceProvider::class);
+        $this->app->register(\Xcms\Page\Providers\ModuleServiceProvider::class);
 
         //Register related facades
         $loader = AliasLoader::getInstance();
