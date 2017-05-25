@@ -3,9 +3,7 @@
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 use Nestable\NestableServiceProvider;
-use Xcms\Base\Providers\CollectiveServiceProvider;
-use Xcms\Base\Facades\BreadcrumbsFacade as BreadcrumbsFacade;
-use Xcms\Base\Support\Breadcrumbs;
+use Xcms\Base\Facades\BreadcrumbsFacade;
 
 class ModuleServiceProvider extends ServiceProvider
 {
@@ -73,7 +71,7 @@ class ModuleServiceProvider extends ServiceProvider
         $this->app->register(\Xcms\Blog\Providers\ModuleServiceProvider::class);
         $this->app->register(\Xcms\Page\Providers\ModuleServiceProvider::class);
         $this->app->register(\Xcms\Plugin\Providers\ModuleServiceProvider::class);
-        $this->app->register(\Xcms\Theme\Providers\ModuleServiceProvider::class);
+//        $this->app->register(\Xcms\Theme\Providers\ModuleServiceProvider::class);
 
         //Register related facades
         $loader = AliasLoader::getInstance();
