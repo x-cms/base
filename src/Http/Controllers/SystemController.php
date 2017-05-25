@@ -5,6 +5,8 @@ namespace Xcms\Base\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Xcms\Base\Facades\BreadcrumbsFacade;
+use Xcms\Settings\Models\Setting;
+use Xcms\Themes\Facades\ThemeFacade as Theme;
 
 class SystemController extends Controller
 {
@@ -23,6 +25,9 @@ class SystemController extends Controller
             view()->share([
                 'loggedInUser' => $this->loggedInUser
             ]);
+
+            $theme = Setting::where('name', 'theme')->first();
+            Theme::setActive($theme->value);
 
             return $next($request);
         });
