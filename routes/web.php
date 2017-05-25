@@ -16,3 +16,5 @@ use Illuminate\Routing\Router;
 Route::group(['prefix' => 'admin', 'middleware' => 'auth.admin'], function (Router $router) {
     $router->get('/', 'DashboardController@index')->name('dashboard.index');
 });
+
+Route::get('/', 'PublicController@index');

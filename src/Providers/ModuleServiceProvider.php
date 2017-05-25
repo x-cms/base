@@ -71,7 +71,6 @@ class ModuleServiceProvider extends ServiceProvider
         $this->app->register(\Xcms\Blog\Providers\ModuleServiceProvider::class);
         $this->app->register(\Xcms\Page\Providers\ModuleServiceProvider::class);
         $this->app->register(\Xcms\Plugin\Providers\ModuleServiceProvider::class);
-//        $this->app->register(\Xcms\Theme\Providers\ModuleServiceProvider::class);
 
         //Register related facades
         $loader = AliasLoader::getInstance();
@@ -79,6 +78,7 @@ class ModuleServiceProvider extends ServiceProvider
         $loader->alias('Form', \Collective\Html\FormFacade::class);
         $loader->alias('Html', \Collective\Html\HtmlFacade::class);
         $loader->alias('Nestable', \Nestable\Facades\NestableService::class);
+
     }
 
     protected function loadHelpers()
