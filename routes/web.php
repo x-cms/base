@@ -18,3 +18,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth.admin'], function (Rout
 });
 
 Route::get('/', 'PublicController@index');
+
+Route::get('{uri}.html', 'PublicController@getView')->where('uri', '.*');
+
+
+
+
