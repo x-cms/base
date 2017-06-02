@@ -30,10 +30,9 @@ class PublicController extends Controller
         if (!empty($page)) {
             return Theme::view('templates.page.' . $page->template, compact('page'));
         }else{
-            $category = Category::where('slug', $slug)->first();
+            $category = Category::with('children')->where('slug', $slug)->first();
 
             if(!empty($category)){
-
                 return Theme::view('templates.category.' . $category->template, compact('category'));
             }
         }
